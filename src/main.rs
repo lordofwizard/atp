@@ -1,4 +1,5 @@
 use enigo::*;
+#[allow(unused_imports)]
 use std::error::Error;
 use std::thread;
 use std::time;
