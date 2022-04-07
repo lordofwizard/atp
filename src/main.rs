@@ -5,6 +5,7 @@ use std::io::Write;
 use std::thread;
 use std::time;
 use std::io;
+#[allow(unused_macros)]
 macro_rules! input {
     ($($var:ident)*) => {
         let mut buf = String::new();
@@ -15,7 +16,7 @@ macro_rules! input {
 }
 fn main() {
     // computer in computer time
-    print!("Please input how much delay you want to start after the program.. \n :");
+    print!("Please input how much delay you want to start after the program.. \n: ");
     io::stdout().flush().unwrap();
 
 
@@ -24,7 +25,7 @@ fn main() {
     let num : i32 = match x.trim().parse(){
         Ok(n) => n,
         Err(e) => {
-            println!("{}",e);
+            println!("{}\n *THE VALUE OF DELAY IS SET TO 10 SECONDS*",e);
             10
         }
     };
@@ -48,8 +49,8 @@ fn main() {
     let delay : i32 = match x.trim().parse(){
         Ok(n) => n,
         Err(e) => {
-            println!("{}",e);
-            10
+            println!("{} \n*THE VALUE OF DEFAULT DELAY IN BETWEEN ITERATIONS IS 1 Second",e);
+            1
         }
     };
 
