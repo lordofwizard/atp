@@ -15,14 +15,38 @@ fn main() {
     // computer in computer time
     print!("Please input how much delay you want to start after the program.. \n :");
 
+    let mut x = String::new();
+    std::io::stdin().read_line(&mut x).expect("Error reading input");
+    let num : i32 = match x.trim().parse(){
+        Ok(n) => n,
+        Err(e) => {
+            println!("{}",e);
+            10
+        }
+    };
+
+    /* 
     let num : u32;
     input!(num);
-
+    */
     let time_computer = time::Duration::from_secs_f32(num as f32);
 
     print!("Please input the delay in each command you want to input \n: ");
+    
+    /*
     let delay : u32 ;
     input!(delay);
+    */
+    let mut x = String::new();
+    std::io::stdin().read_line(&mut x).expect("Error reading input");
+    let delay : i32 = match x.trim().parse(){
+        Ok(n) => n,
+        Err(e) => {
+            println!("{}",e);
+            10
+        }
+    };
+
 
     let delay_computer = time::Duration::from_secs_f32(delay as f32);
 
