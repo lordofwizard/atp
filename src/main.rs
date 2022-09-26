@@ -18,15 +18,14 @@ fn main() {
     // computer in computer time
     print!("Please input how much delay you want to start after the program.. \n: ");
     io::stdout().flush().unwrap();
-
-
+    
     let mut x = String::new();
     std::io::stdin().read_line(&mut x).expect("Error reading input");
-    let num : i32 = match x.trim().parse(){
+    let num : f32 = match x.trim().parse(){
         Ok(n) => n,
         Err(e) => {
             println!("{}\n *THE VALUE OF DELAY IS SET TO 10 SECONDS*",e);
-            10
+            10.0
         }
     };
 
@@ -46,17 +45,14 @@ fn main() {
     */
     let mut x = String::new();
     std::io::stdin().read_line(&mut x).expect("Error reading input");
-    let delay : i32 = match x.trim().parse(){
+    let delay : f32 = match x.trim().parse(){
         Ok(n) => n,
         Err(e) => {
             println!("{} \n*THE VALUE OF DEFAULT DELAY IN BETWEEN ITERATIONS IS 1 Second",e);
-            1
+            1.0
         }
     };
-
-
     let delay_computer = time::Duration::from_secs_f32(delay as f32);
-
     let mut msg : String = String::new();
     print!("Please type the message you want to spam LOL\n: ");
     io::stdout().flush().unwrap();
